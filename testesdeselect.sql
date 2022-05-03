@@ -27,3 +27,13 @@ select carga, count(*) from cursos
 where ano > 2018
 group by carga
 having carga > (select avg(carga) from cursos);
+
+#teste: quantas pessoas nasceram apos dataX:
+select sexo, count(*) from pessoasinfo where nascimento > ('1990-01-01')
+order by sexo;
+
+#teste: uma lista de quem nasceu fora do brasil, mostrando pais de origem e total de pessoas
+
+select nacionalidade, count(*) from pessoasinfo where nacionalidade not in ('brasil');
+
+select * from pessoasinfo;
